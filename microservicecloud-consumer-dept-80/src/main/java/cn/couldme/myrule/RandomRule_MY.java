@@ -97,7 +97,6 @@ public class RandomRule_MY extends AbstractLoadBalancerRule {
     @Override
     public void initWithNiwsConfig(IClientConfig clientConfig)
     {
-        // TODO Auto-generated method stub
 
     }
 }
