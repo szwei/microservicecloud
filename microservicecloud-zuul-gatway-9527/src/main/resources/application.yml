@@ -1,0 +1,26 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: microservicecloud-zuul-gatway
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: gatway-9527.com
+    prefer-ip-address: true
+
+info:
+  app.name: couldme-microservicecloud
+  company.name: www.couldme.cn
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+
+zuul:
+  routes:
+    user-route:               # 该配置方式中，user-route只是给路由一个名称，可以任意起名。
+      serviceId: microservicecloud-dept
+      path: /mydept/**
+  ignored-services: "*"       #禁用以前的访问路径
+  prefix: /couldme            #给所有的路径添加前缀
