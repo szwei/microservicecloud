@@ -22,7 +22,7 @@ public class DeptClientServiceFallbackFactory implements FallbackFactory<DeptCli
             public boolean add(Dept dept) {
                 return false;
             }
-
+ 
             @Override
             public Dept get(Long id) {
                 return new Dept().setDeptno(id).setDname("改ID: "+id +"没有对应的信息，Consumer客户端提供的降级信息，此刻服务provider已经关闭")
